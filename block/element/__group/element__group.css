@@ -1,0 +1,11 @@
+
+.element__group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 246px;
+    margin: auto;
+    margin-top: 25px;  
+    align-items: center;
+    margin-bottom: 31px;
+}

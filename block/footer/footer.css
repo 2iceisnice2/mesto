@@ -1,0 +1,19 @@
+@import url(__author/footer__author.css);
+
+.footer {
+    margin: auto;
+    max-width: 882px;
+    margin-top: 66px;
+}
+
+@media screen and (max-width: 898px) {
+    .footer {
+        max-width: 596px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer {
+        max-width: 282px;
+    }
+}

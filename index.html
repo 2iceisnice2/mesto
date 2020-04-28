@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="pages/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Место</title>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" src="images/logo.svg" alt="Лого">
+        </header>
+        <main class="content">
+            <section class="profile">
+                <img class="profile__avatar" src="images/custo.jpg" alt="Аватар">
+                <div class="profile__info">
+                    <div class="profile__edit">
+                        <h1 class="profile__title">Жак-Ив Кусто</h1>
+                        <button class="profile__edit-button" type="button" aria-label="Редактирование профиля"></button>
+                    </div>
+                    <p class="profile__subtitle">Исследователь океана</p>
+                </div>
+                <button class="profile__button" type="button" aria-label="Добавить"></button>
+            </section>
+            <section class="elements">
+                <div class="element">
+                    <img class="element__image" src="images/karachevsk.jpg" alt="Храм">
+                    <div class="element__group">
+                        <h2 class="element__name">Карачаевск</h2>
+                        <button class="element__like" type="button" aria-label="Нравится"></button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="images/elbrus.jpg" alt="Эльбрус">
+                    <div class="element__group">
+                        <h2 class="element__name">Гора Эльбрус</h2>
+                        <button class="element__like" type="button" aria-label="Нравится"></button>
+                    </div>
+                </div>    
+                <div class="element">
+                    <img class="element__image" src="images/dombai.jpg" alt="Гора">
+                    <div class="element__group">
+                        <h2 class="element__name">Домбай</h2>
+                        <button class="element__like" type="button" aria-label="Нравится"></button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="images/elbrus.jpg" alt="Эльбрус">
+                    <div class="element__group">
+                        <h2 class="element__name">Гора Эльбрус</h2>
+                        <button class="element__like" type="button" aria-label="Нравится"></button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="images/dombai.jpg" alt="Гора">
+                    <div class="element__group">
+                        <h2 class="element__name">Домбай</h2>
+                        <button class="element__like" type="button" aria-label="Нравится"></button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="images/karachevsk.jpg" alt="Храм">
+                    <div class="element__group">
+                        <h2 class="element__name">Карачаево-Ч...</h2>
+                        <button class="element__like" type="button" aria-label="Нравится"></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__author">&#169; 2020 Mesto Russia</p>
+        </footer>
+        <section class="popup">
+            <div class="popup__container">
+                <button class="popup__closed" type="button" aria-label="Закрыть"></button>
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <form class="popup__form" name="form" method="post" action="#">
+                    <input class="popup__input popup__input_name" name="user" required type="text" placeholder="Имя">
+                    <input class="popup__input popup__input_profession" name="job" required type="text" placeholder="Профессия">
+                    <button class="popup__submit-btn" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+</html>
