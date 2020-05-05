@@ -9,6 +9,7 @@
     background: url('../../../images/edit-btn.svg') center no-repeat;
     border: 2px solid #FFFFFF;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .profile__edit-button:hover {

@@ -8,3 +8,6 @@
 @import url(../block/element/element.css);
 @import url(../block/popup/popup.css);
 @import url(../block/popup/_opened/popup_opened.css);
+@import url(../block/element/__like/_active/element__like_acive.css);
+@import url(../block/popup/_disabled/popup_disabled.css);
+

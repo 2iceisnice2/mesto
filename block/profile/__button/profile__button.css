@@ -12,6 +12,7 @@
     background: url('../../../images/plus.svg') center no-repeat;
     border: 2px solid #FFFFFF;
     border-radius: 2px;
+    transition: 0.3s;
 }
 
 

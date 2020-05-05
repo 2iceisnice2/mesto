@@ -11,4 +11,6 @@
     z-index: 1;
     justify-content: center;
     box-shadow: #ffffff;
+    transition: visibility 0s, opacity 0.2s linear;
+    opacity: 1;
 }

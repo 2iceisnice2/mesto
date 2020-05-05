@@ -1,3 +1,4 @@
+@import url(_img/popup__container_img.css);
 
 .popup__container {
     width: 430px;
@@ -11,11 +12,12 @@
     margin: auto;
     z-index: 2;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+
 }
 
 
 @media screen and (max-width: 600px) {
     .popup__container {
-        width: 295px;
+        width: 240px;
     }
 }
