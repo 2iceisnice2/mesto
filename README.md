@@ -3,5 +3,6 @@ MestoRussia
 
 Использовались адаптивная верстка, grid layout, flexbox-верстка, JavaScript.
 
-https://doroshenko220990.github.io/mesto/
+https://2iceisnice2.github.io/mesto/.
+
 
