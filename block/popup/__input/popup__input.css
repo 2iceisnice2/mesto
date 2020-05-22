@@ -10,8 +10,12 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-    margin-bottom: 29.7px;
     color: #000000;
+    position: relative;
 }
 
+
+/*.popup__input:invalid {
+    border-bottom: 1px solid red;
+}
 
