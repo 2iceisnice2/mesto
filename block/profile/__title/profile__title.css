@@ -5,6 +5,10 @@
     font-weight: 500;
     font-size: 42px;
     line-height: 56px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     margin: 0;
 }
 

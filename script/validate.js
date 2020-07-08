@@ -1,34 +1,47 @@
-
-const showInputError = (formElement, inputElement, errorMessage) => {
+//добавляем класс с ошибкой
+const showInputError = (formElement, inputElement, errorMessage, popupCharObj) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-  inputElement.classList.add('form__input_type_error');
+  inputElement.classList.add(popupCharObj.inputErrorClass);;
   errorElement.textContent = errorMessage;
-  errorElement.classList.add('form__input-error_active');
+  errorElement.classList.remove(popupCharObj.errorClass);
 };
-
-const hideInputError = (formElement, inputElement) => {
+//убираем класс с ошибкой
+const hideInputError = (formElement, inputElement, popupCharObj) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-  inputElement.classList.remove('form__input_type_error');
-  errorElement.classList.remove('form__input-error_active');
+  inputElement.classList.remove(popupCharObj.inputErrorClass);
+  errorElement.classList.add(popupCharObj.errorClass);
+  //убираем сообщения об ошибке 
   errorElement.textContent = '';
 };
-
-const checkInputValidity = (formElement, inputElement) => {
+//Проверка валидности полей
+const checkInputValidity = (formElement, inputElement, popupCharObj) => {
   if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage);
+    showInputError(formElement, inputElement, inputElement.validationMessage, popupCharObj);
   } else {
-    hideInputError(formElement, inputElement);
-  }
+    hideInputError(formElement, inputElement, popupCharObj);
+  };
 };
 
-const setEventListeners = (formElement) => {
-  const inputList = Array.from(formElement.querySelectorAll('.popup__input'));
-  const buttonElement = formElement.querySelector('.popup__submit-btn');
-  toggleButtonState(inputList, buttonElement);
+//меняем состояние кнопки
+const toggleButtonState = (inputList, buttonElement, popupCharObj) => {
+  if (hasInvalidInput(inputList)) {
+    buttonElement.classList.add(popupCharObj.inactiveButtonClass);
+    buttonElement.setAttribute('disabled','true');
+  } else {
+    buttonElement.classList.remove(popupCharObj.inactiveButtonClass);
+    buttonElement.removeAttribute('disabled');
+  };
+};
+
+
+const setEventListeners = (formElement, popupCharObj) => {
+  const inputList = Array.from(formElement.querySelectorAll(popupCharObj.inputSelector));
+  const buttonElement = formElement.querySelector(popupCharObj.submitButtonSelector);
+  toggleButtonState(inputList, buttonElement, popupCharObj);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function () {
-      checkInputValidity(formElement, inputElement);
-      toggleButtonState(inputList, buttonElement);
+      checkInputValidity(formElement, inputElement, popupCharObj);
+      toggleButtonState(inputList, buttonElement, popupCharObj);
     });
   });
 };
@@ -38,32 +51,21 @@ const hasInvalidInput = (inputList) => {
   return inputList.some((inputElement) => {
      
     return !inputElement.validity.valid;
-  })
-}
-
-const toggleButtonState = (inputList, buttonElement) => {
-  if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add('popup__submit-btn_inactive');
-  } else {
-    buttonElement.classList.remove('popup__submit-btn_inactive');
-  }
-}
-
-
-const enableValidation = () => {
-  let formList = Array.from(document.querySelectorAll('.popup'));
-  formList.forEach((formElement) => {
-  formElement.addEventListener('submit', (evt) => {
-    evt.preventDefault();
   });
+};
 
-    setEventListeners(formElement);
-    const fieldsetList = Array.from(formElement.querySelectorAll('.popup__container'));
 
-fieldsetList.forEach((fieldSet) => {
-  setEventListeners(fieldSet);
-});
-});
-}
 
-enableValidation()
+const enableFormValidation = (popupCharObj) =>{
+  // Найдём все формы с указанным классом в DOM
+  const formList = Array.from(document.querySelectorAll(popupCharObj.formSelector));
+
+  // Переберём полученную коллекцию
+  formList.forEach((formElement)=>{
+    // Для каждой формы вызовем функцию setEventListeners
+    setEventListeners(formElement, popupCharObj);
+  });
+};
+
+enableFormValidation(validationObj);
+

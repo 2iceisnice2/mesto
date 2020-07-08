@@ -1,7 +1,7 @@
 
 .popup__input {
     padding-bottom: 13px;
-    border-style: inset;
+    /*border-style: inset;*/
     width: 99%;
     border: none;
     display: inline-block;
@@ -15,7 +15,7 @@
 }
 
 
-/*.popup__input:invalid {
+.popup__input:invalid {
     border-bottom: 1px solid red;
 }
 
