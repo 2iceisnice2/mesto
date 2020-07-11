@@ -1,5 +1,6 @@
 @import url(../styles/normalize.css);
 @import url(../fonts/Inter/inter.css);
+@import url(../block/body/body.css);
 @import url(../block/page/page.css);
 @import url(../block/header/header.css);
 @import url(../block/profile/profile.css);
@@ -12,3 +13,4 @@
 @import url(../block/popup/__submit-btn/_inactive/popup__submit-btn_inactive.css);
 @import url(../block/popup/__input/_type/_error/form__input_type_error.css);
 @import url(../block/popup/__container/_img/popup__container_img.css);
+

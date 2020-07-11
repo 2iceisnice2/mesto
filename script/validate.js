@@ -5,6 +5,7 @@ const showInputError = (formElement, inputElement, errorMessage, popupCharObj) =
   errorElement.textContent = errorMessage;
   errorElement.classList.remove(popupCharObj.errorClass);
 };
+
 //убираем класс с ошибкой
 const hideInputError = (formElement, inputElement, popupCharObj) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
@@ -13,6 +14,7 @@ const hideInputError = (formElement, inputElement, popupCharObj) => {
   //убираем сообщения об ошибке 
   errorElement.textContent = '';
 };
+
 //Проверка валидности полей
 const checkInputValidity = (formElement, inputElement, popupCharObj) => {
   if (!inputElement.validity.valid) {
@@ -45,6 +47,17 @@ const setEventListeners = (formElement, popupCharObj) => {
     });
   });
 };
+
+
+//удаление ошибок при закрытии модального окна
+function setInputsErrorClear(form, popupCharObj ) {
+
+  Array.from(form.querySelectorAll(popupCharObj.inputErrorSelector)).forEach(element =>{
+    element.classList.add(popupCharObj.errorClass);
+  });
+  toggleButtonState(inputListForm, popupSubmitBtn, validationObj);
+};
+
 
 
 const hasInvalidInput = (inputList) => {
