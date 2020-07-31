@@ -1,6 +1,8 @@
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
-
+import {initialCards} from './initialCards.js';
+import {openPopup} from './util.js';
+import {closePopup} from './util.js';
 const formConfig = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
@@ -12,7 +14,7 @@ const formConfig = {
   };
 
 
-import {initialCards} from './initialCards.js';
+//import {initialCards} from './initialCards.js';
 
 const popup = document.querySelector('.popup_profile-info'); 
 const popupToggle = document.querySelector('.profile__edit-button'); 
@@ -46,8 +48,8 @@ const formAddCardValidator = new FormValidator(formConfig, formAddCard);
 formAddCardValidator.enableValidation();
 
 
-import {openPopup} from './util.js';
-import {closePopup} from './util.js';
+//import {openPopup} from './util.js';
+//import {closePopup} from './util.js';
   
   
 
