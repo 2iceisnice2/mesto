@@ -1,6 +1,6 @@
 export const popupExpandedImage = document.querySelector('#img-fullsize');
 
-// Закрыть Pop-Up при клике на ESC и Overlay
+// Закрыть Pop-Up при клике на ESC
 export function setEscButtonHandler (evt){
     if(evt.key==='Escape'){
       const openedPopup = document.querySelector('.popup_opened');

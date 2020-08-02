@@ -8,6 +8,7 @@
     border: none;
     border-radius: 2px;
     cursor: pointer;
+    margin-top: 48px;
 }
 
 .popup__submit-btn:hover {

@@ -1,4 +1,4 @@
 .popup__input-error_hidden{
-    visibility: hidden!important;
+    display: block;
   }
   

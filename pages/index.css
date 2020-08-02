@@ -11,6 +11,7 @@
 @import url(../block/element/__like/_active/element__like_acive.css);
 @import url(../block/popup/_opened/popup_opened.css);
 @import url(../block/popup/__submit-btn/_inactive/popup__submit-btn_inactive.css);
+@import url(../block/popup/__input-error/_hidden/popup__input-error_hidden.css);
 @import url(../block/popup/__input/_type/_error/form__input_type_error.css);
 @import url(../block/popup/__container/_img/popup__container_img.css);
 

@@ -6,6 +6,8 @@ export default class Card {
       this._name = data.name;
       this._link = data.link;
       this._cardSelector = cardSelector;
+      this._popupImage = document.querySelector('.popup__img');
+      this._popupPlace = document.querySelector('.popup__place');
     }
 
     _getTemplate() {
@@ -17,11 +19,12 @@ export default class Card {
         return cardElement;
       }
 
+
+
+
       _popupExpandedImage() {
-        this._popupImage = document.querySelector('.popup__img');
-        this._cardImage = this._element.querySelector('.element__image');
-        this._popupImage.src = this._cardImage.src;
-        document.querySelector('.popup__place').textContent = this._name;
+        this._popupImage.src = this._link;
+        this._popupPlace.textContent = this._name;
         openPopup(popupExpandedImage);
       }
 
@@ -39,14 +42,14 @@ export default class Card {
           this._likeActivation();
         });
         this._element.querySelector('.element__image').removeEventListener('click', () => {
-            this._popupExpandedImage();
+          this._popupExpandedImage();
         });
       }
 
 
       _setEventListeners() {
         this._element.querySelector('.element__image').addEventListener('click', () => {
-            this._popupExpandedImage();
+          this._popupExpandedImage();
         });
         this._element.querySelector('.element__like').addEventListener('click', () => {
           this._likeActivation();

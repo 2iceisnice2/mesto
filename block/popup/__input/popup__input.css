@@ -1,7 +1,6 @@
 
 .popup__input {
     padding-bottom: 13px;
-    /*border-style: inset;*/
     width: 99%;
     border: none;
     display: inline-block;
@@ -12,6 +11,7 @@
     line-height: 17px;
     color: #000000;
     position: relative;
+    margin-top: 26px;
 }
 
 
