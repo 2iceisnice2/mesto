@@ -1,0 +1,25 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "Mesto Russia\r -------------",
+  "main": "index.js",
+  "scripts": {
+    "build": "rd /s /q dist && webpack",
+    "dev": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2iceisnice2/mesto.git"
+  },
+  "author": "Andey Doroshenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2iceisnice2/mesto/issues"
+  },
+  "homepage": "https://github.com/2iceisnice2/mesto#readme",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

@@ -2,7 +2,7 @@
 @import url(__title/popup__title.css);
 @import url(__input/popup__input.css);
 @import url(__submit-btn/popup__submit-btn.css);
-@import url(__closed/popup__closed.css);
+@import url(__close-button/popup__close-button.css);
 @import url(__form/popup__form.css);
 @import url(__imgs/popup__imgs.css);
 @import url(__img/popup__img.css);

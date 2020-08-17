@@ -2,18 +2,18 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="pages/index.css">
+    <link rel="stylesheet" href="src/pages/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Место</title>
 </head>
 <body class="body">
     <div class="page">
         <header class="header">
-            <img class="header__logo" src="images/logo.svg" alt="Лого">
+            <img class="header__logo" src="src/images/logo.svg" alt="Лого">
         </header>
         <main class="content">
             <section class="profile">
-                <img class="profile__avatar" src="images/custo.jpg" alt="Аватар">
+                <img class="profile__avatar" src="src/images/custo.jpg" alt="Аватар">
                 <div class="profile__info">
                     <div class="profile__edit">
                         <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -42,7 +42,7 @@
         </footer>
         <section class="popup popup_profile-info">
             <div class="popup__container">
-                <button class="popup__closed" type="button" aria-label="Закрыть"></button>
+                <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <form class="popup__form popup__form_profile" name="form" method="post" action="#" novalidate>
                 <input class="popup__input popup__input_name" id="name-input" name="user" required type="text" placeholder="Имя"  minlength="2" maxlength="40"
@@ -56,7 +56,7 @@
         </section>
         <section class="popup popup_new-place">
             <div class="popup__container">
-                <button class="popup__closed popup__closed_new-place" type="button" aria-label="Закрыть"></button>
+                <button class="popup__close-button popup__closed_new-place" type="button" aria-label="Закрыть"></button>
                 <h2 class="popup__title">Новое место</h2>
                 <form class="popup__form popup__form_card" name="form" method="post" action="#" novalidate>
                 <input class="popup__input popup__input_place" id="place-input" name="user" required type="text" placeholder="Название" minlength="1" maxlength="30">
@@ -69,12 +69,12 @@
         </section>
         <section class="popup popup__imgs" id="img-fullsize">
             <div class="popup__container popup__container_img">
-                <button class="popup__closed popup__close_img" type="button" aria-label="Закрыть"></button>
+                <button class="popup__close-button popup__close_img" type="button" aria-label="Закрыть"></button>
                 <img class="popup__img" src="">
                 <h2 class="popup__place"></h2>
             </div>
         </section>
     </div>
-    <script type="module" src="scripts/index.js"></script>
+    <script type="module" src="src/pages/index.js"></script>
 </body>
 </html>
