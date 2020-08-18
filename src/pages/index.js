@@ -1,3 +1,5 @@
+
+
 import Section from '../components/Section.js';
 import Card from '../components/Card.js';
 import FormValidator from '../components/FormValidator.js';
@@ -21,6 +23,7 @@ import {formConfig,
         formAddCard,
         popupExpandedImage} from '../utils/constants.js';
 
+import '../pages/index.css';
 
 //вызов валидации
 const formProfileValidator = new FormValidator(formConfig, popupForm);
@@ -110,4 +113,5 @@ popupNewPlace.addEventListener('click', () => {
   popupWithAddForm.openPopup();
   formAddCardValidator.resetForm();
 });
+
 
