@@ -61,42 +61,36 @@ const popupWithImage = new PopupWithImage(popupExpandedImage);
 popupWithImage.setEventListeners();
 
 
+
+
+
 //Карточки из массива
-const cardList = new Section({
-  items: initialCards,
-  renderer: (item) => {
-    const card = new Card({
-      item,
-      handleCardClick: (event) => {
-        popupWithImage.openPopup(event);
-      }
-    }, '#card-template');
-    const cardElement = card.generateCard();
-    cardList.addItem(cardElement);
-  }
-}, elements);
-cardList.renderItems();
+
+const addCards = (data) => {
+  const initialCardsList = new Section({
+    items: data, renderer: (item) => {
+      const card = new Card({
+          item,
+          handleCardClick: (event) => {
+            popupWithImage.openPopup(event);
+          }
+        }, '#card-template');
+      const cardElement = card.generateCard();
+      initialCardsList.addItem(cardElement);
+    }
+  }, elements);
+  initialCardsList.renderItems();
+}
+addCards(initialCards);
 
 
+//Pop-Up  добавления карточки
 
-
-
-//Pop-Up добавления карточки
-const popupWithAddForm = new PopupWithForm({
-  popupSelector: submitPlace,
-  handleFormSubmit: () => {
-    const card = new Card({
-      item: {
-        name: popupInputPlace.value,
-        link: popupInputLink.value,
-       
-      },
-      handleCardClick: (event) => {
-        popupWithImage.openPopup(event);
-      }
-    }, '#card-template');
-    const cardElement = card.generateCard();
-    cardList.addItem(cardElement);
+const popupWithAddForm = new PopupWithForm({  
+  popupSelector: submitPlace, handleFormSubmit: () => {
+    const newCard = [{ name: popupInputPlace.value, link: popupInputLink.value }];
+    addCards(newCard);
+    popupWithAddForm.closePopup();
   }
 });
 popupWithAddForm.setEventListeners();
