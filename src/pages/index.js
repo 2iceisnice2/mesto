@@ -62,8 +62,6 @@ popupWithImage.setEventListeners();
 
 
 
-
-
 //Карточки из массива
 
 const addCards = (data) => {
