@@ -3,6 +3,10 @@
 @import url(__group/element__group.css);
 @import url(__name/element__name.css);
 @import url(__remove-button/element__remove-button.css);
+@import url(__remove-button/_visible/element__remove-button_visible.css);
+@import url(__remove-button/_hidden/element__remove-button_hidden.css);
+@import url(__likes/element__likes.css);
+@import url(__likes-count/element__like-count.css);
 .element {
     background-color: #FFFFFF;
     border-radius: 10px;

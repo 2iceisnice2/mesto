@@ -13,10 +13,13 @@
         </header>
         <main class="content">
             <section class="profile">
-                <img class="profile__avatar" src="images/custo.jpg" alt="Аватар">
+                <div class="profile__avatar-container">
+                    <img class="profile__avatar" src="images/custo.jpg" alt="Аватар пользователя">
+                  </div>
+                  <button class="profile__avatar-button" type="button"></button>
                 <div class="profile__info">
                     <div class="profile__edit">
-                        <h1 class="profile__title">Жак-Ив Кусто</h1>
+                        <h1 class="profile__title">Жак Кусто</h1>
                         <button class="profile__edit-button" type="button" aria-label="Редактирование профиля"></button>
                     </div>
                     <p class="profile__subtitle">Исследователь океана</p>
@@ -30,7 +33,10 @@
                         <img class="element__image">
                         <div class="element__group">
                             <h2 class="element__name"></h2>
-                            <button class="element__like" type="button" aria-label="Нравится"></button>
+                            <div class="element__likes">
+                                <button class="element__like" type="button" aria-label="Нравится"></button>
+                                <p class="element__like-count">0</p>        
+                            </div>
                         </div>
                     </div>
                 </template>
@@ -45,10 +51,10 @@
                 <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <form class="popup__form popup__form_profile" name="form" method="post" action="#" novalidate>
-                <input class="popup__input popup__input_name" id="name-input" name="user" required type="text" placeholder="Имя"  minlength="2" maxlength="40"
+                <input class="popup__input popup__input_name" id="name-input" name="userName" required type="text" placeholder="Имя"  minlength="2" maxlength="40"
                     title="разрешены только русские или английские буквы, пробелы и дефисы" pattern="^[a-zA-Zа-яА-Я\-\s]+$">
                 <span class="popup__input-error" id="name-input-error"></span>
-                <input class="popup__input popup__input_profession" id="job-input" name="job" required type="text" placeholder="Профессия" minlength="2" maxlength="200">
+                <input class="popup__input popup__input_profession" id="job-input" name="userAbout" required type="text" placeholder="Профессия" minlength="2" maxlength="200">
                 <span class="popup__input-error" id="job-input-error"></span>
                 <button class="popup__submit-btn" type="submit">Сохранить</button>
                 </form>
@@ -59,9 +65,9 @@
                 <button class="popup__close-button popup__closed_new-place" type="button" aria-label="Закрыть"></button>
                 <h2 class="popup__title">Новое место</h2>
                 <form class="popup__form popup__form_card" name="form" method="post" action="#" novalidate>
-                <input class="popup__input popup__input_place" id="place-input" name="user" required type="text" placeholder="Название" minlength="1" maxlength="30">
+                <input class="popup__input popup__input_place" id="place-input" name="name" required type="text" placeholder="Название" minlength="1" maxlength="30">
                 <span class="popup__input-error" id="place-input-error"></span>
-                <input class="popup__input popup__input_link" id="link-input" name="job" required type="url" placeholder="Ссылка на картинку">
+                <input class="popup__input popup__input_link" id="link-input" name="link" required type="url" placeholder="Ссылка на картинку">
                 <span class="popup__input-error" id="link-input-error"></span>
                 <button class="popup__submit-btn popup__submit-btn_place" type="submit">Создать</button>
                 </form>
@@ -74,9 +80,29 @@
                 <h2 class="popup__place"></h2>
             </div>
         </section>
+        <section class="popup popup__avatar">
+            <div id="change-avatar" class="popup__container">
+                <form id="avatar-form_container" class="popup__form" name="form" method="patch">
+                    <h2 class="popup__header">Обновить аватар</h2>
+                    <input id="avatar-input" class="popup__input popup__input_type_image-link"
+                     name="userAvatar" type="url" value="" placeholder="Ссылка на изображение" required>
+                    <span id="avatar-input-error" class="popup__input-error"></span>
+                    <button class="popup__submit-btn" type="submit">Сохранить</button>
+                    <button class="popup__close-button" type="button"></button>
+                </form>
+        </div>
+        </section>
+        <section class="popup popup__confirm-del">
+            <div id="confirm-delete" class="popup__container">
+                <form class="popup__form">
+                  <h2 class="popup__header">Вы уверены?</h2>
+                  <button class="popup__submit-btn" type="submit">Да</button>
+                  <button class="popup__close-button" type="button"></button>
+                </form>
+              </div>
+        </section>
     </div>
    <!--<script type="module" src="src/pages/index.js"></script>-->
   <!--<script type="module" src="../dist/main.js"></script>-->
-   
 </body>
 </html>

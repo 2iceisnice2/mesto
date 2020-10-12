@@ -1,28 +1,22 @@
 
-  export default class UserInfo {
-    constructor({ user, input }) {
-      this._userName = user.name;
-      this._userAbout = user.about;
-      this._inputName = input.name;
-      this._inputAbout = input.about;
-    }
-  
-    getUserInfo() {
-      this._inputName.value = this._userName.textContent;
-      this._inputAbout.value = this._userAbout.textContent;
-      const userData = {
-        name: this._userName.textContent,
-        about: this._userAbout.textContent
-      }
-      
-      return userData;
-    }
-  
-    setUserInfo(userData) {
-      userData.name = this._inputName.value;
-      userData.about = this._inputAbout.value;
-      this._userName.textContent = userData.name;
-      this._userAbout.textContent = userData.about;
+export default class UserInfo {
+  constructor({ userName, userAbout, userAvatar }) {
+    this._userName = userName;
+    this._userAbout = userAbout;
+    this._userAvatar = userAvatar;
+  }
 
+  getUserInfo() {
+    return {
+      userName: this._userName.textContent,
+      userAbout: this._userAbout.textContent,
+      userAvatar: this._userAvatar.src
     }
   }
+
+  setUserInfo(userData) {
+    this._userName.textContent = userData.name;
+    this._userAbout.textContent = userData.about;
+    this._userAvatar.src = userData.avatar
+  }
+}
