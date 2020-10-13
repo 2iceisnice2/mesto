@@ -27,17 +27,27 @@ export default class Popup {
     });
   }
 
-  removeEventListeners() {
-    this._popupSelector.querySelector('.popup__close-button').removeEventListener('click', () => {
-      this.closePopup();
-    });
-    document.removeEventListener('mousedown', (event) => {
-      this._handleOverlayClose(event);
-    });
-    document.removeEventListener('keydown', (event) => {
-      this._handleEscClose(event);
-    });
-  }
+ // removeEventListeners() {
+ //   this._popupSelector.querySelector('.popup__close-button').removeEventListener('click', () => {
+  //    this.closePopup();
+  //  });
+  //  document.removeEventListener('mousedown', (event) => {
+  //    this._handleOverlayClose(event);
+  //  });
+  //  document.removeEventListener('keydown', (event) => {
+  //    this._handleEscClose(event);
+  //  });
+ // }
+
+
+  removeEventListeners() { 
+    this._popupSelector.querySelector('.popup__close-button').removeEventListener('click', () => { 
+      this.closePopup(); 
+    }); 
+    document.removeEventListener('mousedown', this._handleOverlayClose); 
+    document.removeEventListener('keydown', this._handleEscClose); 
+  } 
+
 
   openPopup() {
     this._popupSelector.classList.add('popup_opened');

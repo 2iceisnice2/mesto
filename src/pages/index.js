@@ -43,13 +43,14 @@ const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-16',
   headers: {
     authorization: 'c157bcdf-cc24-47fa-ae84-1faa074ac4ef',
-    'Content-Type': 'application/json'
+   'Content-Type': 'application/json'
   }
 });
 
 
 api.getAppInfo()
   .then(([ cardsArray, userData ]) => {
+
 
     const getCardData = (cardData) => {
       return {
@@ -58,20 +59,17 @@ api.getAppInfo()
           popupWithImage.openPopup(cardData);
         },
         handleLikeClick: (card) => {
+          const dataItem = data => {
+          const index = cardsArray.findIndex(item => item._id === card.id());
+          cardsArray.splice(index, 1, data);
+          card.setLikesInfo({...data});
+        }
           if(!card.isLiked()) {
             api.putLike(card.id())
-              .then(data => {
-                const index = cardsArray.findIndex(item => item._id === card.id());
-                cardsArray.splice(index, 1, data);
-                card.setLikesInfo({...data});
-              })
+              .then(dataItem)
           } else {
             api.removeLike(card.id())
-              .then(data => {
-                const index = cardsArray.findIndex(item => item._id === card.id());
-                cardsArray.splice(index, 1, data);
-                card.setLikesInfo({...data});
-              })
+              .then(dataItem)
           }
         },
         handleDeleteButtonClick: (card) => {
@@ -143,10 +141,7 @@ const popupWithAddForm = new PopupWithForm({
         const card = new Card(getCardData(cardData), '#card-template');
         cardList.addItem(card.generateCard());
       })
-      .finally(() => {
-        loading();
         popupWithAddForm.closePopup();
-      });
   }
 }, formConfig);
 
