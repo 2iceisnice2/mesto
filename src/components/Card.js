@@ -89,7 +89,7 @@
       this._setEventListeners();
       this._element.querySelector('.element__name').textContent = this._name;
       this._cardImage.src = this._link;
-      this._cardImage.alt = this._alt;
+      this._cardImage.alt = this._name;
   
       return this._element;
     }
