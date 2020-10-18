@@ -59,17 +59,19 @@ api.getAppInfo()
           popupWithImage.openPopup(cardData);
         },
         handleLikeClick: (card) => {
-          const dataItem = data => {
+          const getData = data => {
           const index = cardsArray.findIndex(item => item._id === card.id());
           cardsArray.splice(index, 1, data);
           card.setLikesInfo({...data});
         }
           if(!card.isLiked()) {
             api.putLike(card.id())
-              .then(dataItem)
+              .then(getData)
+              .catch((error) => console.error(error))
           } else {
             api.removeLike(card.id())
-              .then(dataItem)
+              .then(getData)
+              .catch((error) => console.error(error))
           }
         },
         handleDeleteButtonClick: (card) => {
@@ -80,10 +82,10 @@ api.getAppInfo()
                 cardsArray = cardsArray.filter(item => {
                   return item._id !== card.id();
                 });
-                card.removeCard()
+                card.removeCard();
+                popupWithConfirm.closePopup();
               })
               .catch((error) => console.error(error))
-                popupWithConfirm.closePopup();
           });
         }
       }
@@ -108,10 +110,10 @@ const popupWithProfileForm = new PopupWithForm({
       about: data.userAbout
     })
       .then((userData) => {
-        userInfo.setUserInfo(userData)
+        userInfo.setUserInfo(userData);
+        popupWithProfileForm.closePopup();
       })
-      .catch((error) => console.error(error))
-        popupWithProfileForm.closePopup(); 
+      .catch((error) => console.error(error)) 
   }
 });
 
@@ -126,7 +128,8 @@ const popupWithAvatar = new PopupWithForm({
       .then((userData) => {
         userInfo.setUserInfo(userData)
         popupWithAvatar.closePopup();  
-      });  
+      })
+      .catch((error) => console.error(error))  
   }
 });
 
@@ -140,8 +143,9 @@ const popupWithAddForm = new PopupWithForm({
       .then((cardData) => {
         const card = new Card(getCardData(cardData), '#card-template');
         cardList.addItem(card.generateCard());
-      })
         popupWithAddForm.closePopup();
+      })
+      .catch((error) => console.error(error))
   }
 }, formConfig);
 
